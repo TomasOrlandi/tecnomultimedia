@@ -4,13 +4,13 @@ SoundFile misonido;
 
 PFont fuente1, fuente2, fuente3;
 int posx1, posx2, posx3, posx4;
-PImage  tiago30;
+PImage  tiago30, imagen1, imagen2, imagen3, imagen4;
 
 
 
 
 
- // APRETA ENTER APENAS LO EJECUTES PARA QUE SUENE LA MUSICA
+// APRETA ENTER APENAS LO EJECUTES PARA QUE SUENE LA MUSICA
 
 
 
@@ -30,6 +30,14 @@ void setup () {
 
   textAlign(CENTER);
   tiago30 = loadImage ("tiago30.jpg");
+  imagen1 = loadImage ("imagen1.jpg");
+  imagen2 = loadImage ("imagen2.jpg");
+  imagen3 = loadImage ("imagen3.jpg");
+  imagen4 = loadImage ("imagen4.jpg");
+
+
+
+
   textFont (fuente1, 25);
 }
 
@@ -67,6 +75,7 @@ void draw () {
   if (frameCount > 320  && frameCount < 450) {
     text ( "DIRIGIDA POR \n PETA RIVERO Y HORNOS", 250, 200);
   }
+
 
   if (frameCount > 550 && frameCount < 650) {
     text ( "PROTAGONISTA \n (TIAGO PZK \n CATO)", 250, 200);
@@ -148,17 +157,24 @@ void draw () {
   posx3 = frameCount;
 
 
+
   textSize (30);
   fill(random(255), random(255), random(255));
+  image (imagen1, 0, posx3-4000);
+
   text ("CO-DIRECTOR", 250, 4000 - posx3);  //TITULO CO DIRECTOR
   textSize (12);
 
 
+
+
   fill (255);
   text ("Fernando  Pacheco", 250, 4030 - posx3); // Nombre del co - director
+
   textSize (30);
   fill(random(255), random(255), random(255));
   text ("ELENCO", 250, 4080 - posx3);  //eje y, 600
+
 
   //ELENCO PROTAGONISTAS LADO IZQUIERDO 
   fill (255);
@@ -226,6 +242,8 @@ void draw () {
 
 
   // EQUIPO PRODUCCION LADO IZQUIERDO
+  image (imagen2, 0, posx3-4900);
+
   fill(random(255), random(255), random(255));
   textSize (40);
   text ("PRODUCCION", 250, 5100 - posx3);  // PRODUCCION
@@ -256,6 +274,8 @@ void draw () {
 
 
   // DIRECCION
+  image (imagen3, 0, posx3-5600);
+
   fill(random(255), random(255), random(255));
   textSize (40);
   text ("DIRECCION", 250, 5600 - posx3);  // PRODUCCION
@@ -294,6 +314,8 @@ void draw () {
 
 
   // TEXTO REINICIO
+  image (imagen4, 6000 - posx3, -300);
+
   if (frameCount > 6000) {
     textSize (40);
     fill(random(255), random(255), random(255));
